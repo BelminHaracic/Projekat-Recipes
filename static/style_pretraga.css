@@ -1,0 +1,99 @@
+/* styles.css */
+
+/* Style the button */
+button {
+    background-image: linear-gradient(45deg, #FDD835, #FBC02D);
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add margin-top to create spacing */
+  }
+  .button-container {
+    text-align: center; /* Center the button horizontally */
+    margin-top: 20px; /* Add some top margin for spacing */
+  }
+  
+  /* Style the checkboxes and labels */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+
+  .recepti h1 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+
+.ingredient-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+  }
+  
+  .checkbox-container {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+
+  font-size: 18px; /* Specify the font size */
+  }
+  
+  .checkbox-container input {
+    opacity: 0;
+    cursor: pointer;
+  }
+  
+  .checkmark {
+    position: relative;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+    margin-right: 5px;
+  }
+  
+  .checkbox-container:hover .checkmark {
+    background-color: #ccc;
+  }
+  
+  .checkbox-container input:checked + .checkmark {
+    background-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  .checkbox-container input:checked + .checkmark:after {
+    display: block;
+  }
+  
+  .checkbox-container .checkmark:after {
+    left: 7px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+  }
+  
+  .button-container {
+    margin-top: 20px;
+    text-align: center;
+  }

@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Pretrazi sve recepte</title>
+
+   <!-- Google Web Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+
+ <!-- bootstrap core css -->
+ <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+ 
+        <link rel="stylesheet" href="{% static 'pretragaa.css' %}">
+  </head>
+  <body>
+    <style>
+       
+      :root {
+        --background-image: url("{% static 'slike/bg-hero.jpg' %}");
+      }
+      
+    </style>
+
+
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+          <a href="" class="navbar-brand p-0">
+              <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Recepti</h1>
+              <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+       
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav ms-auto py-0 pe-4">
+
+                  <div class="nav-item dropdown">
+                    
+                      <div class="dropdown-menu m-0">
+                          <a href="booking.html" class="dropdown-item">Booking</a>
+                          <a href="team.html" class="dropdown-item">Our Team</a>
+                          <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                      </div>
+                  </div>
+
+          </div>
+      </nav>
+      <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container text-center my-5 pt-5 pb-4">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Pretrazi sve recepte</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="/">POCETNA</a></li>
+
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+    <div id="search-container">
+      <form action="{% url 'pretraga_recepata' %}" method="get">
+        <input type="text" id="search-bar" name="q" placeholder="Trazi recepte...">
+        <button type="submit">Pretrazi</button>
+      </form>
+    </div>
+    <!-- mozda stavit da se klikne na recept za detalje, mozda u bazu stavit nacin pripreme npr lorem ipsum -->
+    <ul id="tasks">
+      {% for recept in recepti %}
+        <li> <h3> {{recept.naziv}} - <a style="font-size: 15px"> {{recept.opis}} </a> </h3>
+             <a href="/prikazi_recept/{{ recept.id }}">
+        <img style="width: 200px; height: 200px; object-fit: cover;" src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" />
+    </li>
+    <ul>
+       
+    {% for sastojak in recept.sastojci.all %}
+        <li> <h4>  {{ sastojak.naziv }} </h4></li>
+    {% endfor %}
+    </ul>
+      {% empty %}
+        <li>Nema reepata sa tim imenom.</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

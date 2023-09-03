@@ -1,0 +1,70 @@
+/* Resetiranje stilova */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  
+  /* Postavljanje fonta */
+  body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #202020, #4d4d4d);
+    background-size: 100vw 100vh;
+  }
+ 
+  /* Centralno poravnanje naslova */
+  .centered {
+    text-align: center;
+    color: #d4d4d4;
+    margin-top: 50px;
+
+  }
+  
+  /* Stilizacija forme */
+  form {
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+    border: 2px solid #d1d1d1;
+    border-radius: 5px;
+  }
+  
+ 
+
+ 
+  
+  /* Stilizacija labela i polja unosa */
+  form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  }
+  
+  /* Stilizacija submit gumba */
+  form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #ffd812, #d4af1a);
+    border: none;
+    border-radius: 5px;
+    color: #131313;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #ca9504, #dbb50b);
+  }
+  

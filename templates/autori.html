@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>O nama</title>
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'autori_style.css' %}">
+  </head>
+  <body>
+    <header>
+      <h1>O nama</h1>
+    </header>
+    <main>
+      
+      <img src="  {% static 'slike/logo.jpg' %}" alt="Moja fotografija">
+      <p>Mi smo Belmin i Ernes, imamo 21 godinu i studiramo Softversko inzenjerstvo na fakultetu. 
+        Prije toga, završili smo srednju školu elektrotehničke struke.
+        
+        Ernes i Belmin su iznimno talentirani i posvećeni svom radu. 
+        Uvijek su spremi pomoći drugima i jako se trude da svojim znanjem i vještinama pomognu kolegama. </p>
+     
+       
+        <div class="profile">
+          <div class="profile-image">
+           <a href="https://www.linkedin.com/in/belmin-hara%C4%8Di%C4%87-28563a227"><img src="  {% static 'slike/belmin.jpg' %}" alt="Belmin Haracic"></a> 
+          </div>
+          <div class="profile-name">Belmin Haracic</div>
+        </div>
+        
+        <div class="profile">
+          <div class="profile-image">
+          <a href="https://www.linkedin.com/in/ernes-musija-7921b2231">  <img src="  {% static 'slike/ernes.jpg' %}" alt="Ernes Musija"></a>
+          </div>
+          <div class="profile-name">Ernes Musija</div>
+        </div>
+        
+
+
+
+    </main>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1431.9212128827353!2d18.117628665766045!3d44.12787223473876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x475f2748be063269%3A0x727dcd9ac4a190a8!2sRadio%20Kakanj%2087%2C9%20MHz!5e0!3m2!1sen!2sba!4v1679255658037!5m2!1sen!2sba"
+    width="1200" height="600" 
+    style="border:0;
+    display: block; margin: 0 auto;" 
+    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <footer>
+      <p>&copy;2023 Belmin i Ernes. Sva prava pridržana.</p>
+    </footer>
+  </body>
+</html>

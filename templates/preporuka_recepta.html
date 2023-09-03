@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Preporuka recepta</title>
+
+   <!-- Google Web Fonts -->
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
+
+
+ <!-- bootstrap core css -->
+ <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+ <link rel="stylesheet" href="{% static 'style_pretraga.css' %}">
+        <link rel="stylesheet" href="{% static 'pretragaa.css' %}">
+      <link rel="stylesheet" href="{% static 'style_index.css' %}">
+  </head>
+  <body>
+    <style>
+       
+      :root {
+        --background-image: url("{% static 'slike/bg-hero.jpg' %}");
+      }
+      
+    </style>
+
+
+    <div class="container-xxl position-relative p-0">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+          <a href="" class="navbar-brand p-0">
+              <h1 class="text-primary m-0"><i class="fa fa-utensils me-3"></i>Recepti</h1>
+              <!-- <img src="img/logo.png" alt="Logo"> -->
+          </a>
+       
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+              <div class="navbar-nav ms-auto py-0 pe-4">
+
+                  <div class="nav-item dropdown">
+                    
+                      <div class="dropdown-menu m-0">
+                          <a href="booking.html" class="dropdown-item">Booking</a>
+                          <a href="team.html" class="dropdown-item">Our Team</a>
+                          <a href="testimonial.html" class="dropdown-item">Testimonial</a>
+                      </div>
+                  </div>
+
+          </div>
+      </nav>
+      <div class="container-xxl py-5 bg-dark hero-header mb-5">
+        <div class="container text-center my-5 pt-5 pb-4">
+            <h1 class="display-3 text-white mb-3 animated slideInDown">Preporuka recepta</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center text-uppercase">
+                    <li class="breadcrumb-item"><a href="/">POCETNA</a></li>
+
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+
+
+  <form method="post">
+    {% csrf_token %}
+    <div class="ingredient-container">
+      {% for sastojak in sastojci %}
+        <label class="checkbox-container">
+          <input name="selected_items" type="checkbox" value="{{ sastojak.id }}">
+          <span class="checkmark"></span>
+          {{ sastojak.naziv }}
+        </label>
+      {% endfor %}
+    </div>
+
+    <div class="button-container">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+ <ul class="recepti-container">
+        {% for recept in preporuceni_recepti %}
+        <!-- znaci zbog ovog postane plavo ne znam bgm i pokvari velicine one -->
+        <a href="/prikazi_recept/{{ recept.id }}">
+        <li class="recept-item">
+          <div class="recept-image">
+            <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
+          </div>
+          <div class="recept-info">
+            <h3 id="mudja">{{recept.naziv}}</h3>
+            <p id="narcis">{{recept.opis}}</p>
+            <h4 id="stefan">Sastojci:</h4>
+            <ul class="sastojci-list">
+              {% for sastojak in recept.sastojci.all %}
+              <li id="narcis">{{sastojak.naziv}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        </a>
+        {% endfor %}
+      </ul>
+</body>
+</html>

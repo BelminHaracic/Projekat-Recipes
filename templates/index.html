@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'index_style.css' %}">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Satisfy|Bree+Serif|Candal|PT+Sans">
+   
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css" integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- slidck slider -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" integrity="sha256-UK1EiopXIL+KVhfbFa8xrmAWPeBjMVdvYMYkTAEv/HI=" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css.map" integrity="undefined" crossorigin="anonymous" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/stylee.css' %}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href=" {% static 'css/responsive.css' %}" rel="stylesheet" />
+
+  </head>
+<body>
+  <h1 id="prvi-h1">Recepti</h1>
+<h1>Dobrodosao {{user.name}} {{user.surname}}</h1>
+
+
+
+<div class="menu-container">
+  
+    <input type="checkbox" id="openmenu" class="hamburger-checkbox">
+    
+    <div class="hamburger-icon">
+      <label for="openmenu" id="hamburger-label">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>    
+    </div>
+  
+      <div class="menu-pane">
+        
+        <nav>
+          <ul class="menu-links">
+
+
+            </span>
+              
+            </li>
+            
+            <li><a href="/admin/">ADMIN</a>
+             
+            </li>
+            <li><a href="registration">REGISTRATION</a></li>
+            <li><a href="login">LOGIN</a></li>
+          </ul>
+           <ul class="menu-links">
+                      
+                         <span id="DC-info">
+           
+            </span></li>
+  
+            <li><a href="/logout">LOGOUT</a></li>
+            <li>
+              <a href="/autori">
+                O nama
+              </a>
+            </li>
+            <li>
+              <a class="" href="/kontakt">
+                Kontakt
+              </a>
+            </li>
+          </ul>
+          
+          
+        </nav>
+      </div>
+
+      <div class="button-container">
+        <a href="/pretraga_recepata" class="button"><strong>Pretrazi sve recepte</strong></a>
+        <a href="/preporuka_recepta" class="button"><strong>Preporuka recepta</strong></a>
+      </div>
+      
+      
+      <h2 id="saban" >Najpopularniji recepti:</h2>
+      <ul class="recepti-container">
+        {% for recept in popularni_recepti %}
+        <!-- znaci zbog ovog postane plavo ne znam bgm i pokvari velicine one -->
+        <a href="/prikazi_recept/{{ recept.id }}">
+        <li class="recept-item">
+          <div class="recept-image">
+            <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}">
+          </div>
+          <div class="recept-info">
+            <h3 id="mudja">{{recept.naziv}}</h3>
+            <p id="narcis">{{recept.opis}}</p>
+            <h4 id="stefan">Sastojci:</h4>
+            <ul class="sastojci-list">
+              {% for sastojak in recept.sastojci.all %}
+              <li id="narcis">{{sastojak.naziv}}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </li>
+        </a>
+        {% endfor %}
+      </ul>
+      <h2 id="saban">Sastojci:</h2>
+      <ul class="sastojci-container">
+        {% for sastojak in sastojci %}
+        <li class="sastojci-item">{{sastojak.naziv}}</li>
+        {% endfor %}
+      </ul>
+
+
+    <!-- slider section -->
+    <section class="slider_section ">
+      <div class="container ">
+        <div class="row">
+          <div class="col-lg-10 mx-auto">
+            <div class="detail-box">
+              <h1 id="prvi-h1">
+                Otkrijte svoju najdrazu hranu
+              </h1>
+              <p id="prvi-h2">
+                Ako je ovo ovo, onda je ovo hit
+              </p>
+            </div>
+            <div class="find_container ">
+              <div class="container">
+                <div class="row">
+                  <div class="col">
+                
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="slider_container">
+        {% for recept in recepti %}
+        <div class="item">
+          <div class="img-box">
+            <img src="{{ recept.slika.url }}" alt="{{ recept.naziv }}" class="small-image" />
+
+          </div>
+        </div>
+        {% endfor %}
+       
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+    
+
+
+      <div class="footer_container">
+        <!-- info section -->
+        <section class="info_section ">
+          <div class="container">
+            <div class="contact_box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+              </a>
+            </div>
+            <div class="info_links">
+              <ul>
+                
+              
+               
+              </ul>
+            </div>
+            <div class="social_box">
+              <a href="">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+              </a>
+              <a href="">
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- end info_section -->
+    
+    
+        <!-- footer section -->
+        <footer class="footer_section">
+          <div class="container">
+           
+              <h4>Contact</h4>
+              <p><i class="centar"></i>Kakanj, BiH</p>
+              <p><i class="centar"></i>+012 345 67890</p>
+              <p><i class="centar"></i>info@size.ba</p>
+          </div>
+          <div class="footer-bottom">
+            <p>
+              &copy; <span id="displayYear"></span> Sva prava pridržava
+              <a href="/">Belmin i Ernes</a>
+            </p>
+            <p>
+              Distribuirao: <a href="/">Certigon</a>
+            </p>
+          </div>
+        </footer>
+        
+        
+        <!-- footer section --> 
+        
+        
+
+
+<!-- jQery -->
+
+
+<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+<!-- bootstrap js -->
+<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- slick  slider -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js"></script>
+<!-- nice select -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js" integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+<!-- custom js -->
+<script src="{% static 'js/script.js' %}"></script>
+
+
+
+
+
+</body>
+</html>

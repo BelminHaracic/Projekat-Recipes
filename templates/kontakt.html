@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="{% static 'kontakt_style.css' %}">
+<html>
+<head>
+    <style>
+       
+        :root {
+          --background-image: url("{% static 'slike/prijava.jpg' %}");
+        }
+      </style>
+  <meta charset="UTF-8">
+  <title>Kontakt forma</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Kontaktirajte nas</h1>
+  <form action="kontakt" method="POST">
+    {% csrf_token %}
+    <label for="email">Vaša e-mail adresa:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="message">Vaša poruka:</label>
+    <textarea id="message" name="poruka" rows="6" required></textarea>
+    <button type="submit">Pošalji</button>
+  </form>
+</body>
+</html>

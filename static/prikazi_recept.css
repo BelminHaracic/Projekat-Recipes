@@ -1,0 +1,152 @@
+/* Opća stilizacija */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(45deg, #ebc792, #ffb13b);
+}
+
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  h2, h3 {
+    color: #333333;
+  }
+
+  /* Stilizacija recepta */
+  .recipe-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .recipe-image {
+    flex: 0 0 50%;
+  }
+
+.user-icon {
+  width: 20px; /* Adjust the width to your desired size */
+  height: 20px; /* Adjust the height to your desired size */
+}
+
+
+  .recipe-image img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .recipe-info {
+    flex: 0 0 50%;
+    padding-left: 10px;
+  }
+
+  .recipe-info h2 {
+    font-size: 24px;
+    margin-top: 0;
+  }
+
+  .recipe-info p {
+    margin-top: 0;
+  }
+
+  .recipe-info ul {
+    list-style: none;
+    padding: 0;
+  }
+/* Stilizacija komentara */
+.comments-section {
+  margin-top: 40px;
+}
+
+.comments-section h2 {
+  font-size: 24px;
+}
+
+.comment {
+  background-color: linear-gradient(45deg, #ebc792, #ffb13b);
+  padding: 0;
+  margin-bottom: 10px;
+}
+
+
+
+.comment-actions form {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.comment-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .comment-actions .delete-btn {
+    background-color: red;
+    display: block;
+    margin-bottom: 10px;
+    color: white;
+    
+  }
+  
+  .comment-actions .edit-btn {
+    background-color: green;
+    color: white;
+    margin-right: 200px;
+    margin-right: 200px;
+    margin-top: 10px;
+  }
+  
+
+.comment-actions .edit-toggle-btn{
+background-color: green;
+  color: white;
+}
+
+  /* Stilizacija forme za komentare */
+  form {
+    margin-top: 20px;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  textarea {
+    width: 100%;
+    padding: 0px;
+    resize: vertical;
+  }
+
+  button[type="submit"] {
+    background-color: #333333;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #555555;
+  }
+  .recipe-image {
+    flex: 0 0 50%;
+    background-color: #FFDDBB; /* Blaga narančasta boja pozadine */
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .recipe-image img {
+    max-width: 100%;
+    height: auto;
+    width: 400px; /* Podešavanje širine slike */
+    height: 300px; /* Podešavanje visine slike */
+  }
+  

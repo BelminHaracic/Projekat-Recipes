@@ -1,0 +1,65 @@
+body {
+    background: linear-gradient(to bottom, #1b1b1b, #222222);
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 5px 5px rgba(245, 244, 244, 0.89);
+    width: 400px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: none;
+  }
+  
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  p {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #fff;
+  }
+  
+  form {
+    margin-top: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to bottom, #fdd835, #fbc02d);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* Dodatni stil za animaciju */
+  }
+  
+  input[type="submit"]:hover {
+    background: linear-gradient(to bottom, #fbc02d, #fdd835);
+  }
+  
